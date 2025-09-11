@@ -161,15 +161,54 @@ Precision: 0.984
 
 ### Требования
 - Установленный [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- Включённая виртуализация в BIOS
+- Windows 10/11 или актуальная версия WSL 2
 
-### Сборка и запуск
-```bash
-# Сборка образа
-docker build -t tbank-detection .
+---
 
-# Запуск контейнера
-docker run -p 8000:8000 tbank-detection.
+###  Шаг 1: Установите Docker Desktop
 
+1. Перейдите на [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. Скачайте и установите Docker Desktop.
+3. Запустите Docker.
+---
 
+###  Шаг 2: Откройте терминал в папке проекта
 
+1. Откройте командную строку
+2. Перейдите в проводнике Windows в папку с проектом.
 
+### Шаг 3: Соберите Docker-образ
+
+- docker build -t tbank-detection .
+
+После этого должна начаться сборка и установка зависимостей, прописаннных в файле requirements.txt
+
+### Шаг 4: Запусти контейнер
+
+- docker run -p 8000:8000 tbank-detection
+
+docker run — запуск контейнера.
+-p 8000:8000 — проброс порта: внешний 8000 → внутренний 8000.
+tbank-detection — имя собранного образа
+
+### Шаг 5: Проверьте работу API
+
+Откройте браузер и перейди по ссылке:
+
+ http://localhost:8000/docs
+
+ Вы должны увидеть Swagger UI — интерфейс для тестирования API
+
+ ### Шаг 6: Протестируйте детекцию
+
+1. На странице найдите эндпоинт /detect.
+2. Нажмите "Try it out".
+3. Нажмите "Choose File" и выберите любое изображение с логотипом Т-Банка.
+4. Нажмите "Execute".
+
+Ниже будет показвн результат
+
+### Шаг 7: Как остановить сервер
+
+В терминале, где работает docker run, нажмиnt CTRL + C

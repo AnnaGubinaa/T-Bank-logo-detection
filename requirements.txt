@@ -5,3 +5,4 @@ torchvision
 Pillow
 numpy
 ultralytics>=8.0.0
+python-multipart
