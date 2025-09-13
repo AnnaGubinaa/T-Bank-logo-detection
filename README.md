@@ -156,7 +156,7 @@ https://app.roboflow.com/training-model-oprwl/t-bank-logo-labeling-p93h4/2 - д�
 
 ### 10. Примеры детекции
 
-![Примеры детекции](detection-examples-on-val.png)
+![Примеры детекции на валидационной выборке](collage.png)
 
 ---
 
